@@ -1,6 +1,9 @@
 const express = require('express');
+const postDb = require('./postDb');
 
-const router = express.Router();
+const router = express.Router({
+  mergeParams: true,
+});
 
 router.get('/', (req, res) => {
   // do your magic!
