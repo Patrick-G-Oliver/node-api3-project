@@ -1,5 +1,5 @@
 const userDb = require('../users/userDb');
-
+/*
 function checkUserID() {
     return (req, res, next) => {
         userDb.getById(req.params.id)
@@ -23,7 +23,7 @@ function checkUserID() {
             })
     }
 }
-
+*/
 function checkUserData() {
     return (req, res, next) => {
         if (!req.body.name) {
@@ -37,6 +37,6 @@ function checkUserData() {
 }
 
 module.exports = {
-    checkUserID,
+    // checkUserID,
     checkUserData,
 }

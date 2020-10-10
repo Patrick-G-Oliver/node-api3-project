@@ -14,3 +14,4 @@ server.use((err, req, res, next) => {
   server.listen(port, () => {
     console.log(`The server is listening on http://localhost:${port}`)
   })
+// TO START UP SERVER: npm run watch
