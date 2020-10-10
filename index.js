@@ -2,11 +2,11 @@
 // const express = require('express');
 const server = require('./server');
 
-const port = 4000;
+const port = 5000;
 
 server.use((err, req, res, next) => {
     console.log(err)
-    return res.staus(500).json({
+    return res.status(500).json({
       message: "Something went wrong. Please try again later."
     })
   })
