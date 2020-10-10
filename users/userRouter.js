@@ -100,13 +100,8 @@ function validateUserID() {
 					.then((user) => {
 							// to check if a user with the ID specified in the request exists in the database...
 							if (!user) {
-								return res.status(404).json({
-									message: "User not found",
-								})
-							// to check if the ID specified in the request matches a user's ID in the database...(???)
-							} else if (!user.id) {
 								return res.status(400).json({
-									message: "invalid user id"
+									message: "invalid user id",
 								})
 							} else {
 								req.user = user
