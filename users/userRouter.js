@@ -98,6 +98,7 @@ function validateUserID() {
 									message: "invalid user id",
 								})
 							} else {
+								// 'user' attached to the request
 								req.user = user
 									next()
 							}
@@ -130,7 +131,7 @@ function validatePost() {
 				return res.status(400).json({
 					message: "missing post data",
 				})
-			// to check if the request name property is absent...
+			// to check if the request text property is absent...
 			} else if (!req.body.text) {
 				return res.status(400).json({
 					message: "missing required text field"
