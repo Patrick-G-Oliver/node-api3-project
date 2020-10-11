@@ -17,12 +17,6 @@ router.post('/users', validateUser(), (req, res) => {
 });
 
 router.post('/users/:id/posts', validateUserID(), validatePost(), (req, res) => {
-  if (!req.body.text) {
-		return res.status(400).json({
-			message: "Need a value for text",
-		})
-	}
-
 	userDb.addUserPost(req.params.id, req.body)
 		.then((post) => {
 			res.status(201).json(post)
