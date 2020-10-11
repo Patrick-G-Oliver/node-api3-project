@@ -61,12 +61,16 @@ router.put('/posts/:id', validatePostID(), (req, res) => {
 
 function validatePostID() {
   return (req, res, next) => {
+    // match the id in the request to an id in the database
+    // using the getById function from the postDb.js file
     postDb.getById(req.params.id)
       .then((post) => {
+        // If the id doesn't match up, return a 400, etc. 
         if (!post) {
           return res.status(400).json({
             message: "invalid post id",
           })
+        // // Otherwise, attach 'post' to the request.
         } else {
           req.post = post
           next()

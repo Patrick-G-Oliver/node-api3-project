@@ -1,3 +1,6 @@
+// These custom middleware functions were moved to the userRouter.js folder, 
+// but could be stored here for importation to other files across the app. 
+
 /*
 const userDb = require('../users/userDb');
 
